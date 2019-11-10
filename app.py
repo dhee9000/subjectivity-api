@@ -78,30 +78,30 @@ def api_analyze_text():
 
   return jsonify(response)
 
-# def extract_text_from_url(pageUrl):
+def extract_text_from_url(pageUrl):
 
-#   try:
-#     page = urllib2.urlopen(quote_page)
-#   except urllib2.HTTPError, err:
-#     return False
+  try:
+    page = urllib2.urlopen(quote_page)
+  except urllib2.HTTPError, err:
+    return False
 
-#   soup = BeautifulSoup(page, 'html.parser')
+  soup = BeautifulSoup(page, 'html.parser')
 
-#   return soup.get_text()
+  return soup.get_text()
 
-# @app.route('/api/analysis/url', methods=['GET'])
-# def api_analyze_url():
-#   reqeustItem = request.json
+@app.route('/api/analysis/url', methods=['GET'])
+def api_analyze_url():
+  reqeustItem = request.json
 
-#   # Analyze text from URL
-#   pageUrl = requestItem["url"]
-#   text = extract_text_from_url(pageUrl)
-#   response = get_text_analysis(text)
+  # Analyze text from URL
+  pageUrl = requestItem["url"]
+  text = extract_text_from_url(pageUrl)
+  response = get_text_analysis(text)
 
-#   if(not response):
-#     raise CannotProcessURL('Could not load the page!', status_code=404)
+  if(not response):
+    raise CannotProcessURL('Could not load the page!', status_code=404)
 
-#   return jsonify(response)
+  return jsonify(response)
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=80)
