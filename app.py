@@ -44,6 +44,7 @@ def get_text_analysis(text):
   response = {}
   response["source"] = text
   response["sentences"] = []
+  response["sentencecount"] = 0
 
   for sentence in sentences:
     sentenceBlob = TextBlob(sentence)
@@ -64,6 +65,7 @@ def get_text_analysis(text):
     sentenceAnalysis["subjectivity"] = sentenceBlob.sentiment.subjectivity
     
     response["sentences"].append(sentenceAnalysis)
+    response["sentencecount"] += 1
 
     return response
 
