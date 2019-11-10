@@ -1,6 +1,6 @@
 import nltk
 from textblob import TextBlob
-# import urllib2
+import urllib3
 from bs4 import BeautifulSoup
 
 from flask import Flask, request, jsonify
@@ -68,7 +68,7 @@ def get_text_analysis(text):
     return response
 
 
-@app.route('/api/analysis/text', methods=['GET'])
+@app.route('/api/analysis/text', methods=['GET', 'POST'])
 def api_analyze_text():
   requestItem = request.json
 
