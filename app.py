@@ -92,7 +92,7 @@ def extract_text_from_url(pageUrl):
 
   return soup.get_text()
 
-@app.route('/api/analysis/url', methods=['GET'])
+@app.route('/api/analysis/url', methods=['GET', 'POST'])
 def api_analyze_url():
   requestItem = request.json
 
