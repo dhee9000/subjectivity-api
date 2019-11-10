@@ -69,7 +69,7 @@ def get_text_analysis(text):
     response["sentences"].append(sentenceAnalysis)
     response["sentencecount"] += 1
 
-    return response
+  return response
 
 
 @app.route('/api/analysis/text', methods=['GET', 'POST'])
