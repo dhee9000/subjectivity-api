@@ -102,3 +102,6 @@ def api_analyze_text():
 #     raise CannotProcessURL('Could not load the page!', status_code=404)
 
 #   return jsonify(response)
+
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=80)
