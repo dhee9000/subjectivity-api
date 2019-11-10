@@ -45,8 +45,10 @@ def get_text_analysis(text):
   response["source"] = text
   response["sentences"] = []
   response["sentencecount"] = 0
+  response["sentenceReconstruct"] = ""
 
   for sentence in sentences:
+    response["sentenceReconstruct"] += sentence + "."
     sentenceBlob = TextBlob(sentence)
 
     sentenceAnalysis = {}
