@@ -4,5 +4,5 @@ Flask==1.1.1
 gunicorn==20.0.0
 nltk==3.4.5
 textblob==0.15.3
-urllib3==1.25.6
+urllib3==1.25.8
 virtualenv==16.7.7
